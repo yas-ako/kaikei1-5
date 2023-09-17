@@ -1,0 +1,110 @@
+html {
+  font-family: "Noto Serif JP Light", serif;
+}
+
+// めも
+// h1 章 chapter
+// h2 節 section
+// h3 見出し heading
+// h4 小見出し subheading
+
+h1 {
+  page-break-after: left;
+}
+
+// h1 {
+//   font-family: "Noto Serif JP Medium", serif;
+//   break-before: page;
+
+//   color: white;
+// }
+
+// h1::after {
+//   display: block;
+//   position: absolute;
+//   content: "";
+//   background-color: #0184ca;
+//   width: 100px;
+//   height: 30px;
+//   z-index: -100;
+// }
+// @page :first {
+//   /* 全原稿ファイルの中で1枚目のページ */
+//   counter-reset: chapter;
+// }
+
+// @page :nth(1) {
+//   /* 各原稿ファイルの中で1枚目のページ */
+//   counter-increment: chapter;
+// }
+
+// body {
+//   /* 各原稿ファイル */
+//   counter-reset: section;
+// }
+
+// h1 {
+//   counter-increment: section;
+
+//   &::before {
+//     content: counter(chapter) "." counter(section) "章 ";
+//   }
+// }
+// @page: nth(1) {
+
+// 表紙の画像
+@page: first {
+  background-image: url("./img/vs_bg_soutobira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @bottom-right {
+    content: none;
+  }
+}
+
+.pagebreak {
+  visibility: hidden;
+  break-after: page;
+}
+
+h2 {
+  display: inline-flex;
+  // height: 518px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+
+  color: #017dc5;
+  font-family: Noto Serif JP;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2.635px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@page {
+  size: 148mm 210mm; /* A5サイズ */
+  margin: 18mm 15mm;
+}
+
+// @page: nth(1) {
+//   // background-image: url("img/vs_bg_soutobira.png");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: right;
+//   background-color: #fff;
+
+//   @bottom-right {
+//     content: none;
+//   }
+// }

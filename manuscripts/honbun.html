@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>本文</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="themes/packages/mytheme/theme_common.css">
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  </head>
+  <body class="foo bar">
+    <p>この原稿は <a href="https://vivliostyle.github.io/vfm/vfm">VFM (Vivliostyle Flavored Markdown)</a> で書かれています。詳細はドキュメントを確認してください。</p>
+    <section class="level1" aria-labelledby="code">
+      <h1 id="code">ソースコード</h1>
+      <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+      <section class="level2" aria-labelledby="code-with-caption">
+        <h2 id="code-with-caption">キャプション付き</h2>
+        <figure class="language-javascript">
+          <figcaption>app.js</figcaption>
+          <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+        </figure>
+        <p>or</p>
+        <figure class="language-javascript">
+          <figcaption>app.js</figcaption>
+          <pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+        </figure>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="footnotes">
+      <h1 id="footnotes">後注</h1>
+      <p>
+        VFM は GitHub リポジトリ<a id="fnref1" href="#fn1" class="footnote-ref" role="doc-noteref"><sup>1</sup></a>で開発されています。
+        issue は GitHub<a id="fnref2" href="#fn2" class="footnote-ref" role="doc-noteref"><sup>2</sup></a>で管理されています。
+        後注はインラインで記述することもできます<a id="fnref3" href="#fn3" class="footnote-ref" role="doc-noteref"><sup>3</sup></a>。
+      </p>
+    </section>
+    <section class="level1" aria-labelledby="frontmatter">
+      <h1 id="frontmatter">Frontmatter</h1>
+      <p>Markdown ファイルの冒頭で、メタデータを設定することができます。詳細は <a href="https://vivliostyle.github.io/vfm/vfm#frontmatter">Frontmatter part in VFM document</a> を確認してください。</p>
+    </section>
+    <section class="level1" aria-labelledby="newline">
+      <h1 id="newline">改行</h1>
+      <p>デフォルトでは、空行を1行はさむことで改行が行われます。Frontmatter で <code>hardLineBreaks</code> を <code>true</code> にすると、空行なしで改行が行われます。</p>
+      <p>はじめまして。</p>
+      <p>
+        Vivliostyle Flavored Markdown（略して VFM）の世界へようこそ。
+        VFM は出版物の執筆に適した Markdown 方言であり、Vivliostyle プロジェクトのために策定・実装されました。
+      </p>
+    </section>
+    <section class="level1" aria-labelledby="figure">
+      <h1 id="figure">画像</h1>
+      <p>
+        <img src="https://vivliostyle.org/assets/vivliostyle-logo.svg">
+      </p>
+      <section class="level2" aria-labelledby="figure-with-caption">
+        <h2 id="figure-with-caption">キャプション</h2>
+        <figure>
+          <img src="https://vivliostyle.org/assets/vivliostyle-logo.svg" alt="Vivliostyle Logo">
+          <figcaption aria-hidden="true">Vivliostyle Logo</figcaption>
+        </figure>
+        <figure>
+          <img src="https://vivliostyle.org/assets/vivliostyle-logo.svg" alt="Vivliostyle Logo" title="公式サイトで配布されています" id="image" data-sample="sample">
+          <figcaption aria-hidden="true">Vivliostyle Logo</figcaption>
+        </figure>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="math">
+      <h1 id="math">数式</h1>
+      <p>インライン： <span class="math inline" data-math-typeset="true">\(x = y\)</span></p>
+      <p>ディスプレイ： <span class="math display" data-math-typeset="true">$$1 + 1 = 2$$</span></p>
+    </section>
+    <section class="level1" aria-labelledby="html">
+      <h1 id="html">HTML</h1>
+      <div class="custom">
+        <p>Hey</p>
+      </div>
+      <section class="level2" aria-labelledby="html-with-markdown">
+        <h2 id="html-with-markdown">Markdown と HTML の併用</h2>
+        <div class="custom">
+          <ul>
+            <li>hoge</li>
+            <li>fuga</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <section class="level1" aria-labelledby="ruby">
+      <h1 id="ruby">ルビ</h1>
+      <p>This is <ruby>Ruby<rt>ルビ</rt></ruby></p>
+    </section>
+    <section class="footnotes" role="doc-endnotes">
+      <hr>
+      <ol>
+        <li id="fn1" role="doc-endnote"><a href="https://github.com/vivliostyle/vfm">VFM</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></li>
+        <li id="fn2" role="doc-endnote"><a href="https://github.com/vivliostyle/vfm/issues">Issues</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></li>
+        <li id="fn3" role="doc-endnote">これは後注です。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
+      </ol>
+    </section>
+  </body>
+</html>

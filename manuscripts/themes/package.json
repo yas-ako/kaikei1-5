@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mytheme": "file:../../themes/mytheme"
+  }
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/*
+ * For PDF publications or Vivliostyle Viewer:
+ * load this style in PDF publicatoins (format: pdf)
+ */
+/* common styles */
+html {
+  font-family: "Noto Serif JP Light", serif;
+}
+
+h1 {
+  page-break-after: left;
+}
+
+@page : first {
+  background-image: url("./img/vs_bg_soutobira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @bottom-right {
+    content: none;
+  }
+}
+.pagebreak {
+  visibility: hidden;
+  break-after: page;
+}
+
+h2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #017dc5;
+  font-family: Noto Serif JP;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2.635px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@page {
+  size: 148mm 210mm; /* A5サイズ */
+  margin: 18mm 15mm;
+}
+/* and more... 🖋 */
+
+/*# sourceMappingURL=theme_print.css.map */
