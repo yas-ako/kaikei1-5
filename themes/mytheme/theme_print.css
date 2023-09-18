@@ -4,7 +4,7 @@
  * load this style in PDF publicatoins (format: pdf)
  */
 /* common styles */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +79,7 @@ h3 {
   margin: 1.3mm 0 0 0;
   padding: 0 0mm 0 12mm;
   font-family: "Noto Sans JP", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   height: 7mm;
   line-height: 7mm;
   font-size: 4mm;
@@ -94,15 +94,16 @@ h3::before {
   box-shadow: 0px -10px 9px -4px #00abdd inset;
   height: 7mm;
   color: #fff;
+  font-weight: 500;
   clip-path: polygon(0mm 0px, 100% 0px, 100% 1mm, 100% 100%, 100% 100%, 1mm 100%, 0px calc(102% - 1mm), 0px 1mm);
 }
-h3 p {
-  font-size: 3mm;
-}
-h3 .introduction {
-  font-size: 4mm;
+
+.introduction {
+  font-size: 3.5mm;
   font-family: "Noto Sans JP", sans-serif;
-  margin-top: 3mm;
+  margin-top: 2mm;
+  font-weight: 500;
+  letter-spacing: -0.2mm;
 }
 
 /* and more... 🖋 */
