@@ -130,7 +130,8 @@ h3 {
   background: linear-gradient(to right, #fff 5%, #e0eaf6 5%);
   margin: 1.3mm 0 0 0;
   padding: 0 0mm 0 12mm;
-  font-family: Noto Sans JP Regular;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
   height: 7mm;
   line-height: 7mm;
   font-size: 4mm;
@@ -166,7 +167,7 @@ h3 {
 
   .introduction {
     font-size: 4mm;
-    font-family: Noto Sans JP;
+    font-family: "Noto Sans JP", sans-serif;
     margin-top: 3mm;
   }
 }
