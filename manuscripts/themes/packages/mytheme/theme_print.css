@@ -4,16 +4,33 @@
  * load this style in PDF publicatoins (format: pdf)
  */
 /* common styles */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Noto Serif JP Light", serif;
 }
 
-h1 {
-  page-break-after: left;
+@page {
+  size: 148mm 210mm; /* A5サイズ */
+  margin: 18mm 16mm 16mm 16mm;
 }
-
 @page : first {
   background-image: url("./img/vs_bg_soutobira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @bottom-right {
+    content: none;
+  }
+}
+@page : nth(4) {
+  background-image: url("./img/image_left1.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -27,31 +44,65 @@ h1 {
   break-after: page;
 }
 
+h1 {
+  page-break-after: left;
+}
+
 h2 {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  flex-shrink: 0;
   color: #017dc5;
-  font-family: Noto Serif JP;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 2.635px;
+  counter-increment: section;
+  font-size: 6.3mm;
+  padding-left: 24mm;
+  position: relative;
+}
+h2::before {
+  content: "第" counter(section) "節 ";
+  position: absolute;
+  left: 0;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 21mm;
+  width: 0.15mm;
+  height: 6.3mm;
+  top: 50%;
+  margin-top: -2.8mm;
+  background-color: #000;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+h3 {
+  counter-increment: subheading;
+  background-color: #e0eaf6;
+  background: linear-gradient(to right, #fff 5%, #e0eaf6 5%);
+  margin: 1.3mm 0 0 0;
+  padding: 0 0mm 0 12mm;
+  font-family: Noto Sans JP Regular;
+  height: 7mm;
+  line-height: 7mm;
+  font-size: 4mm;
+}
+h3::before {
+  content: counter(subheading);
+  text-align: center;
+  width: 10mm;
+  position: absolute;
+  left: 0;
+  background-color: #017dc5;
+  box-shadow: 0px -10px 9px -4px #00abdd inset;
+  height: 7mm;
+  color: #fff;
+  clip-path: polygon(0mm 0px, 100% 0px, 100% 1mm, 100% 100%, 100% 100%, 1mm 100%, 0px calc(102% - 1mm), 0px 1mm);
+}
+h3 p {
+  font-size: 3mm;
+}
+h3 .introduction {
+  font-size: 4mm;
+  font-family: Noto Sans JP;
+  margin-top: 3mm;
 }
 
-@page {
-  size: 148mm 210mm; /* A5サイズ */
-  margin: 18mm 15mm;
-}
 /* and more... 🖋 */
 
 /*# sourceMappingURL=theme_print.css.map */
