@@ -9,11 +9,61 @@
 html {
   font-family: "Noto Serif JP", serif;
   font-weight: 300;
+  text-align: justify;
 }
 
+html {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 300;
+}
+
+h1 {
+  counter-increment: chapter;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  font-size: 8mm;
+  padding-left: 21mm;
+  color: white;
+}
+h1::before {
+  position: absolute;
+  left: -6mm;
+  content: "第" counter(chapter) "章";
+}
+
+@page :first {
+  /* 全原稿ファイルの中で1枚目のページ */
+  counter-reset: chapter;
+}
+@page :nth(1) {
+  /* 各原稿ファイルの中で1枚目のページ */
+  counter-increment: chapter;
+}
 @page {
   size: 148mm 210mm; /* A5サイズ */
   margin: 18mm 16mm 16mm 16mm;
+}
+@page :left {
+  margin-right: 20mm;
+  @top-left-corner {
+    content: counter(page);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: 3.4mm;
+  }
+  @top-left {
+    content: "第" counter(chapter) "章 │ " env(doc-title);
+    font-family: "Noto Serif JP";
+    font-weight: 500;
+    font-size: 3mm;
+  }
+}
+@page :right {
+  margin-left: 20mm;
+  @top-right-corner {
+    content: counter(page);
+  }
 }
 @page : first {
   background-image: url("./img/vs_bg_soutobira.png");
@@ -22,6 +72,32 @@ html {
   background-position: right;
   background-color: #fff;
   @bottom-right {
+    content: none;
+  }
+}
+@page : nth(2) {
+  background-image: url("./img/image_left-chapter.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @top-left-corner {
+    content: none;
+  }
+  @top-left {
+    content: none;
+  }
+}
+@page : nth(3) {
+  background-image: url("./img/chapter_page.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: #fff;
+  @top-left-corner {
+    content: none;
+  }
+  @top-left {
     content: none;
   }
 }
@@ -49,6 +125,7 @@ h2 {
   counter-increment: section;
   font-size: 6.3mm;
   padding-left: 24mm;
+  margin-bottom: 1.3mm;
   position: relative;
 }
 h2::before {
@@ -69,9 +146,10 @@ h2::after {
 
 h3 {
   counter-increment: subheading;
+  counter-reset: heading;
   background-color: #e0eaf6;
   background: linear-gradient(to right, #fff 5%, #e0eaf6 5%);
-  margin: 1.3mm 0 0 0;
+  margin-bottom: 2mm;
   padding: 0 0mm 0 12mm;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 600;
@@ -96,9 +174,33 @@ h3::before {
 .introduction {
   font-size: 3.5mm;
   font-family: "Noto Sans JP", sans-serif;
-  margin-top: 2mm;
+  margin-bottom: 6mm;
   font-weight: 500;
   letter-spacing: -0.2mm;
+}
+
+h4 {
+  counter-increment: heading;
+  font-family: Noto Sans JP;
+  font-weight: 600;
+  font-size: 3.4mm;
+  padding-left: 6mm;
+  margin-bottom: 2mm;
+  border-bottom: 0.2mm #d55564 solid;
+}
+h4::before {
+  color: #fff;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 5mm;
+  background-color: #d55564;
+  content: counter(heading, upper-alpha);
+}
+
+p {
+  text-indent: 1rem;
+  font-size: 3.7mm;
 }
 
 /*# sourceMappingURL=theme_common.css.map */
